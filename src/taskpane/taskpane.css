@@ -18,13 +18,17 @@
  
  .ms-welcome__header {
     padding: 20px;
-    padding-bottom: 30px;
-    padding-top: 100px;
+    padding-bottom: 0px;
+    padding-top: 20px;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
     align-items: center;
+ }
+ .ms-welcome__header > h1 {
+    font-weight: bold;
+    font-size: 20px;
  }
 
  .ms-welcome__main {
@@ -66,7 +70,8 @@
  }
  
 .ms-Button.ms-Button--hero .ms-Button-label {
-  color: #0078d7;
+  color: #000000;
+  background-color: #008800;
 }
 
 .ms-Button.ms-Button--hero:hover .ms-Button-label,
@@ -77,4 +82,59 @@
 
 b {
     font-weight: bold;
+}
+
+#progress-container > img {
+    max-width: 100%;
+    height: auto; 
+}
+
+.caution {
+    color: white;
+    background-color: orange;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.safe {
+    color: white;
+    background-color: green;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.unsafe {
+    color: white;
+    background-color: red;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.safe-text {
+    color: green;
+    font-weight: bold;
+}
+
+.unsafe-text {
+    color: red;
+    font-weight: bold;
+}
+
+.caution-text {
+    color: orange;
+    font-weight: bold;
+}
+
+.button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.button {
+    cursor: pointer;
+
 }

@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contoso Task Pane Add-in</title>
+    <title>Inspect The URL!</title>
 
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
@@ -22,18 +22,30 @@
 
 <body class="ms-font-m ms-welcome ms-Fabric">
     <header class="ms-welcome__header ms-bgColor-neutralLighter">
-        <img width="90" height="90" src="../../assets/logo-filled.png" alt="Contoso" title="Contoso" />
-        <h1 class="ms-font-su">Welcome</h1>
+        <img width="90" height="90" src="../../assets/logo-filled.png" alt="Inspect The URL!" title="Inspect The URL!" />
+        <h1 class="ms-font-su">Inspect The URL!</h1>
     </header>
-    <section id="sideload-msg" class="ms-welcome__main">
-        <h2 class="ms-font-xl">Please <a target="_blank" href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing">sideload</a> your add-in to see app body.</h2>
-    </section>
-    <main id="app-body" class="ms-welcome__main" style="display: none;">
-        <h2 class="ms-font-xl"> Inspect the URL! </h2>
-        <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
-            <span class="ms-Button-label">Run</span>
+    <main id="app-body" class="ms-welcome__main" style="display: block;">
+        <div id="progress-container" style="display: none;">
+            <img src="../../assets/analyzing.gif" alt="Analyzing..." />
         </div>
         <p><label id="item-subject"></label></p>
+        <div id="results" style="display: none;">
+            <table width="100%" class="ms-table">
+                <tr><th colspan="2">RESULTS</th></tr>
+                <tr><td><b>TRUST RATING:</b></td><td id="trust-rating"></td></tr>
+                <tr><td><b>Address match?</b></td><td id="address-match"></td></tr>
+                <tr><td><b>Sender Domain:</b></td><td id="domain"></td></tr>
+                <tr><td><b>Domain Reputation:</b></td><td id="reputation"></td></tr>
+                <tr><td><b>Sender Authentication:</b></td><td id="auth"></td></tr>
+                <tr><td><b>Suspicious Links:</b></td><td id="links"></td></tr>
+                <tr><td><b>Malicious Attachments:</b></td><td id="attachments"></td></tr>
+            </table>
+                    <div class="button-div">
+            <button id="close" class="safe button" onclick="close()">Close to evaluate new email</button>
+        </div>
+        </div>
+
     </main>
 </body>
 

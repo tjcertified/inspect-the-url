@@ -96,6 +96,17 @@ module.exports = async (env, options) => {
             proxyReq.setHeader('x-apikey', process.env.VT_API_KEY);
             proxyReq.setHeader('accept', 'application/json');
           }
+        },
+        {
+          context: ['/file'],
+          target: 'https://virustotal.com',
+          changeOrigin: true,
+          secure: true,
+          pathRewrite: {'^/file' : '/api/v3/files'},
+          onProxyReq: (proxyReq, req, res) => {
+            proxyReq.setHeader('x-apikey', process.env.VT_API_KEY);
+            proxyReq.setHeader('accept', 'application/json');
+          }
         }
       ],
       headers: {
